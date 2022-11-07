@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: gray;
+}
+
+#container {
+    padding: 70px;
+}
+
+#guests {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.guest {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    margin: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 7px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.guest > p {
+    width: 50%;
+    margin: 6px;
+}
