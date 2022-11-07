@@ -1,0 +1,12 @@
+@font-face {
+    font-family: font;
+    src: url('../font.ttf');
+}
+
+* {
+    font-family: font;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}

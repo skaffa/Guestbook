@@ -1,15 +1,27 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 body {
-    background: gray;
+    background: black;
 }
 
 #container {
     padding: 70px;
+}
+
+#add {
+    text-decoration: none;
+    display: inline-block;
+    margin: 8px;
+    background:#79ff72;
+    padding: 6px;
+    color: black;
+    border-radius: 7px;
+    font-weight: 600;
+    width: 70px;
+    text-align: center;
+    transition: .15s ease-in-out;
+}
+
+#add:hover {
+    background:#acfca8
 }
 
 #guests {
@@ -20,7 +32,8 @@ body {
 
 .guest {
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
+    border-color: #313131;
     border-radius: 12px;
     margin: 5px;
     width: 100%;
@@ -34,4 +47,9 @@ body {
 .guest > p {
     width: 50%;
     margin: 6px;
+}
+
+.svg {
+    width: 24px;
+    margin-right: 6px;
 }
