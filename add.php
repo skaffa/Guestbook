@@ -4,6 +4,7 @@ if (isset($_POST['submit'])) {
     validateInput($_POST['name'], $_POST['message']);
 }
 
+
 function validateInput(string $name, string $message) {
     $data = [];
     $data += ['id' => sha1(uniqid())];
@@ -11,6 +12,7 @@ function validateInput(string $name, string $message) {
     $data += ['name' => $name];
     htmlspecialchars($message);
     $data += ['message' => $message];
+    $data += ['time' => time()];
     storeInput($data);
 }
 
@@ -33,15 +35,17 @@ function storeInput($data)  {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Guest</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/add.css">
 </head>
 <body>
     <div id="container">
+        <h1 style="color: white; text-align: center;">Add someone to the guestbook</h1>
         <form action="" method="post" autocomplete="off">
             <label for="name">Name</label>
-            <input type="text" name="name" id="" required>
+            <input type="text" placeholder="Name..." name="name" id="" required>
             <label for="message">Message</label>
-            <textarea name="message" id="" cols="30" rows="10" required></textarea>
-            <input type="submit" name="submit" value="submit">
+            <textarea name="message" placeholder="Message..." id="" cols="30" rows="10" required></textarea>
+            <input type="submit" name="submit" id="submit" value="submit">
         </form>
     </div>
 </body>

@@ -11,4 +11,24 @@ form {
 
 form * {
     margin-top: 7px;
+    color: black;
+    outline:none;
+    transition: .1s ease-in-out;
+}
+
+form *:focus,
+form *:hover {
+    background: #c2c2c2;;
+}
+
+form label {
+    color: white;
+}
+
+form input,
+form textarea {
+    border-style: none;
+    padding: 8px;
+    border-radius: 7px;
+    background: gray;
 }

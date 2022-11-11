@@ -1,2 +1,2 @@
 # Guestbook
-Guestbook excercise for Captrack
+Guestbook case for Captrack
