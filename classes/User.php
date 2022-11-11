@@ -1,10 +1,9 @@
 <?php
 
-Interface User{
-
-    function createUser();
-    function readUser();
-    function updateUser();
-    function deleteUser();
-
+interface User
+{
+  public function createUser();
+  public function readUser();
+  public function updateUser();
+  public function deleteUser();
 }
