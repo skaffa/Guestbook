@@ -8,7 +8,18 @@
 </head>
 <body>
     <div id="container">
-
+        <form action="" method="post">
+            <h3>Login</h3>
+            <input type="text" name="name" id="">
+            <input type="password" name="password" id="">
+            <input type="submit" name="submit" value="Login">
+        </form>
+        <form action="" method="post">
+            <h3>Register</h3>
+            <input type="text" name="name" id="">
+            <input type="password" name="password" id="">
+            <input type="password" name="passwordRepeat" id="">
+        </form>
     </div>
 </body>
 </html>
