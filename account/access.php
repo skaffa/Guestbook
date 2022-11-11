@@ -20,6 +20,11 @@
             <input type="text" name="name" id="">
             <input type="password" name="password" id="">
             <input type="password" name="passwordRepeat" id="">
+            <label for="admin">
+                <input type="checkbox" name="admin" id="">
+                Admin
+            </label>
+            <input type="submit" value="">
         </form>
     </div>
 </body>

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html,body,#container {
+    height: 100%;
+}
+
 body {
     background: black;
 }
@@ -12,9 +16,26 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 form {
     display: flex;
-    width: 45%;
+    flex-direction: column;
+    width: 40%;
+    padding: 30px;
+    background: darkgray;
+    border-radius: 12px;
+}
+
+h3 {
+    color: black;
+    margin-bottom: 6px;
+    border-left-style: solid;
+    margin-left: 3px;
+    padding-left: 12px;
+}
+
+form > input {
+    padding: 3px;
 }
