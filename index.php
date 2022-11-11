@@ -37,22 +37,6 @@
 
 <script>
 
-    window.addEventListener("scroll", (event) => {
-        let scroll = this.scrollY;
-        console.log(scroll)
-
-        let button = document.getElementById('add');
-
-
-        if (scroll >= 70) {
-            console.log('ass');
-            button = button.textContent.replace('Add', ' ');
-        } else {
-            console.log('nah');
-            button = button.textContent.replace(' ', 'Ass');
-        }
-    });
-
     function deleteMessage(id) {
         if (confirm('Are you sure you want to delete this message?') == false) {
             return 0

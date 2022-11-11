@@ -19,7 +19,7 @@ function validateInput(string $name, string $message) {
 function storeInput($data)  {
     $oldData = json_decode(file_get_contents('guests.json'), true);
     $oldData[] = $data;
-    $encodedData = json_encode($oldData);
+    $encodedData = json_encode($oldData, JSON_PRETTY_PRINT);
     file_put_contents('guests.json', $encodedData);
     header('Location: index.php');
 }
