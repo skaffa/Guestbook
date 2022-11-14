@@ -26,9 +26,7 @@
                 </div>
                 <button class="btn btn-outline-primary" type="submit">Submit</button>
             </form>
-            <div>
-                TEST
-            </div>
+            <img id="book" src="book.svg" alt="">
         </div>
         <main>
 
