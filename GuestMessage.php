@@ -1,6 +1,6 @@
 <?php 
 
-class GuestMessage {
+class GuestMessage implements JsonSerializable {
 
     private $id;
     private $timestamp;
@@ -47,4 +47,13 @@ class GuestMessage {
         return $this->message;
     }
 
+    public function jsonSerialize(): mixed
+    {
+        return get_object_vars($this);
+    }
+
+    public function addToGuestbook() {
+
+
+    }
 }
