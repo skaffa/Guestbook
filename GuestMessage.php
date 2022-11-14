@@ -46,4 +46,5 @@ class GuestMessage {
     public function getMessage() {
         return $this->message;
     }
+
 }
