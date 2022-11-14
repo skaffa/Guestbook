@@ -14,18 +14,20 @@
 </head>
 <body>
     <div id="container">
-        <form action="" method="post">
-            <div class="form-floating mb-3">
-                <input class="form-control" placeholder="Name" name="name" minlength="2" maxlength="50" type="text" required>
-                <label for="name">Name</label>
-            </div>
-            <div class="form-floating mb-3">
-                <textarea class="form-control" placeholder="Message" minlength="2" maxlength="500" name="message" id="" required></textarea>
-                <label for="message">Message</label>
-            </div>
-
-            <button class="btn btn-outline-primary" type="submit">Submit</button>
-        </form>
+        <div>
+            <form action="" method="post">
+                <div class="form-floating mb-3">
+                    <input class="form-control" placeholder="Name" name="name" minlength="2" maxlength="50" type="text" required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Message" minlength="2" maxlength="500" name="message" id="" required></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <button class="btn btn-outline-primary" type="submit">Submit</button>
+            </form>
+            <img id="book" src="book.svg" alt="">
+        </div>
         <main>
 
 
