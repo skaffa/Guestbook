@@ -26,7 +26,9 @@
                 </div>
                 <button class="btn btn-outline-primary" type="submit">Submit</button>
             </form>
-            <img id="book" src="book.svg" alt="">
+            <div id="book-wrapper">
+                <img id="book" src="book.svg" alt="">
+            </div>
         </div>
         <main>
 
