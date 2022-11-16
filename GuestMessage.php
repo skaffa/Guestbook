@@ -1,6 +1,6 @@
 <?php 
 
-class GuestMessage implements JsonSerializable, Message {
+class GuestMessage implements JsonSerializable {
 
     private $id;
     private $timestamp;
@@ -52,9 +52,9 @@ class GuestMessage implements JsonSerializable, Message {
         return get_object_vars($this);
     }
 
-    public function addToGuestbook() {
-        // bestaat gastenboek? Ja -> voeg toe. Nee, maak gastenboek
-
-
+    public function addToGuestbook($guestMessage) {
+        $convertedData = $guestMessage->jsonSerialize(); 
+        $convertedData = json_encode($convertedData, JSON_PRETTY_PRINT);
+        file_put_contents("guestbook.json", $convertedData, FILE_APPEND);
     }
 }
