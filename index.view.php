@@ -1,6 +1,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="notifications.css">
 
 
 
@@ -15,7 +16,7 @@
 <body>
     <div id="container">
         <div>
-            <form action="" method="post">
+            <form action="" id="form" method="post">
                 <div class="form-floating mb-3">
                     <input class="form-control" placeholder="Name" name="name" minlength="2" maxlength="50" type="text" required>
                     <label for="name">Name</label>
@@ -24,10 +25,10 @@
                     <textarea class="form-control" placeholder="Message" minlength="2" maxlength="500" name="message" id="" required></textarea>
                     <label for="message">Message</label>
                 </div>
-                <button class="btn btn-outline-primary" type="submit">Submit</button>
+                <button class="btn btn-outline-primary" id="submit" onclick="validate('#ff2d00')" type="submit">Submit</button>
             </form>
-            <div id="book-wrapper">
-                <img id="book" src="book.svg" alt="">
+            <div id="notifications">
+                <!-- <img id="book" src="book.svg" alt=""> -->
             </div>
         </div>
         <main>
@@ -102,3 +103,33 @@
     </div>
 </body>
 </html>
+
+
+
+<script>
+    function validate(color) {
+        if (document.getElementById('form').reportValidity() == false) {
+            console.log('Fill in all fields');
+            notify(color);
+        }
+    }
+
+    function notify(color) {
+        console.log('Creating notification');
+
+        let id = 'ID' + Math.floor(Math.random() * 999999);;
+
+        const newDiv = document.createElement("div");
+        const newContent = document.createTextNode("Please make sure all fields are valid!");
+        newDiv.appendChild(newContent);
+        newDiv.setAttribute("id", id);
+        const currentDiv = document.getElementById("div1");
+        newDiv.style.backgroundColor = color + '9b';
+        document.getElementById('notifications').insertBefore(newDiv, currentDiv);
+
+        var delayInMilliseconds = 2500; //1 second
+        setTimeout(function() {
+        document.getElementById(id).remove();
+        }, delayInMilliseconds);
+    }
+</script>
