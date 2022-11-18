@@ -32,7 +32,6 @@ if (isset($_GET['delid'])) {
         header('Location: index.php');
     }
 }
-// $succesfulMessageAdded = true;
 
 require "index.view.php";
 
