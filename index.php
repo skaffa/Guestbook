@@ -3,11 +3,11 @@
 require "Message.php";
 require "GuestMessage.php";
 
-$guestbook = "guestbook.json";
-
 if (isset($_POST["name"])) {
     $id = sha1(uniqid());
     $timestamp = time();
+    $_POST["name"] = htmlspecialchars(stripslashes(trim($_POST["name"])));
+    $_POST["message"] = htmlspecialchars(stripslashes(trim($_POST["message"])));
     $guestMessage = new GuestMessage($id, $timestamp, $_POST["name"], $_POST["message"]);
     $guestMessage->addToGuestbook($guestMessage);
     header('Location: index.php');
