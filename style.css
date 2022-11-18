@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-weight: bold;
 }
 
 #container {
@@ -87,5 +88,22 @@ article {
 }
 
 .delete-button {
-    
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-style: none;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: auto;
+    background: #ff5a5a;
+    transition: .1s ease-in-out;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ff5a5a;
+    margin-top: 4px;
+}
+.delete-button:hover {
+    background: linear-gradient(45deg, #f87575, #ff4747);
+    border-color: #ff1c1c;
 }

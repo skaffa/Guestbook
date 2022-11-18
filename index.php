@@ -22,10 +22,10 @@ if (isset($_GET['delid'])) {
             unset($data[$key]);
             file_put_contents('guestbook.json', json_encode($data));
         }
+        echo("<script>validate('#ff2d00');</script>");
     }
-
-    header('Location: index.php');
 }
+
 
 require "index.view.php";
 
