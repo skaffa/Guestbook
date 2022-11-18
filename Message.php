@@ -2,5 +2,5 @@
 
 interface Message {
     
-    public function addToGuestbook();
+    public function addToGuestbook($guestMessage);
 }
