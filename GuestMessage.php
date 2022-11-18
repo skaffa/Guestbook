@@ -53,9 +53,9 @@ class GuestMessage implements JsonSerializable, Message {
     }
 
     public function addToGuestbook($guestMessage) {
-        $data = (array)json_decode(file_get_contents("guestbook.json"));
-        array_unshift($data, $guestMessage);       
-        $convertedData = json_encode($data, JSON_PRETTY_PRINT);
+        $guestbook = (array)json_decode(file_get_contents("guestbook.json"));
+        array_unshift($guestbook, $guestMessage);       
+        $convertedData = json_encode($guestbook, JSON_PRETTY_PRINT);
         file_put_contents("guestbook.json", $convertedData);
     }
 }
