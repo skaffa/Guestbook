@@ -50,6 +50,7 @@
                         <div class="time">'.$time.'</div>
                     </div>
                     <div class="message">'.$msg.'</div>
+                    <button class="delete-button" onclick="deleteMessage(\''.$id.'\')"><img src="assets/bin.svg" width="12px" alt="">Delete</button>
                 </article>
                 ');
             }
@@ -59,7 +60,15 @@
 </body>
 </html>
 
-
+<script>
+    function deleteMessage(id) {
+        if (confirm('Are you sure you want to delete this message?') == false) {
+            return 0
+        } else {
+            window.location = 'index.php?delid=' + id;
+        }
+    }
+</script>
 
 <script>
     function validate(color) {
