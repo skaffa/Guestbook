@@ -25,7 +25,7 @@
                     <textarea class="form-control" placeholder="Message" minlength="2" maxlength="500" name="message" id="" required></textarea>
                     <label for="message">Message</label>
                 </div>
-                <button class="btn btn-outline-primary" id="submit" onclick="validate('#ff2d00')" type="submit">Submit</button>
+                <button class="btn btn-outline-primary" id="submit" onclick="validate('#ff2d00', 'Please make sure all fields are valid!')" type="submit">Submit</button>
             </form>
             <div id="notifications">
                 <!-- <img id="book" src="book.svg" alt=""> -->
@@ -71,27 +71,27 @@
 </script>
 
 <script>
-    function validate(color) {
+    function validate(color, message) {
         if (document.getElementById('form').reportValidity() == false) {
-            console.log('Fill in all fields');
-            notify(color);
+            notify(color, message);
         }
     }
 
-    function notify(color) {
+    function notify(color, message) {
         console.log('Creating notification');
 
         let id = 'ID' + Math.floor(Math.random() * 999999);;
 
         const newDiv = document.createElement("div");
-        const newContent = document.createTextNode("Please make sure all fields are valid!");
+        const newContent = document.createTextNode(message);
         newDiv.appendChild(newContent);
         newDiv.setAttribute("id", id);
         const currentDiv = document.getElementById("div1");
         newDiv.style.backgroundColor = color + '9b';
+        newDiv.setAttribute('onclick', 'document.getElementById(\'' + id + '\').remove();');
         document.getElementById('notifications').insertBefore(newDiv, currentDiv);
 
-        var delayInMilliseconds = 2500; //1 second
+        var delayInMilliseconds = 3500; //3.5 seconds
         setTimeout(function() {
         document.getElementById(id).remove();
         }, delayInMilliseconds);
