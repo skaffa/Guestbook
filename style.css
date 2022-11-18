@@ -76,8 +76,8 @@ article {
     margin-left: 12px;
     font-size: 12px;
     margin-top: auto;
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
+    /* text-decoration: underline; */
+    /* text-decoration-thickness: 3px; */
     margin-left: auto;
     margin-right: 20px;
 }

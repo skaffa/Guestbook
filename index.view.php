@@ -34,71 +34,26 @@
         <main>
 
 
-            <article>
-                <div class="message-info">
-                    <div class="name">Rasmus Lerdorf</div>
-                    <div class="time">20 april, 1969 at 13:37</div>
-                </div>
-                <div class="message">Bacon ipsum dolor amet ham prosciutto non, frankfurter qui in turducken eiusmod eu brisket ex pork loin excepteur chuck pig. Shankle cillum capicola tenderloin magna tail sirloin consequat pork belly meatloaf. Chislic swine nulla, tri-tip landjaeger venison flank deserunt labore kevin qui chuck.</div>
-            </article>
-            <article>
-                <div class="message-info">
-                    <div class="name">Rasmus Lerdorf</div>
-                    <div class="time">20 april, 1969 at 13:37</div>
-                </div>
-                <div class="message">Bacon ipsum dolor amet ham prosciutto non, frankfurter qui in turducken eiusmod eu brisket ex pork loin excepteur chuck pig. Shankle cillum capicola tenderloin magna tail sirloin consequat pork belly meatloaf. Chislic swine nulla, tri-tip landjaeger venison flank deserunt labore kevin qui chuck.</div>
-            </article>
-            <article>
-                <div class="message-info">
-                    <div class="name">Rasmus Lerdorf</div>
-                    <div class="time">20 april, 1969 at 13:37</div>
-                </div>
-                <div class="message">Bacon ipsum dolor amet ham prosciutto non, frankfurter qui in turducken eiusmod eu brisket ex pork loin excepteur chuck pig. Shankle cillum capicola tenderloin magna tail sirloin consequat pork belly meatloaf. Chislic swine nulla, tri-tip landjaeger venison flank deserunt labore kevin qui chuck.</div>
-            </article>
-            <article>
-                <div class="message-info">
-                    <div class="name">Rasmus Lerdorf</div>
-                    <div class="time">20 april, 1969 at 13:37</div>
-                </div>
-                <div class="message">Bacon ipsum dolor amet ham prosciutto non, frankfurter qui in turducken eiusmod eu brisket ex pork loin excepteur chuck pig. Shankle cillum capicola tenderloin magna tail sirloin consequat pork belly meatloaf. Chislic swine nulla, tri-tip landjaeger venison flank deserunt labore kevin qui chuck.</div>
-            </article>
-            <article>
-                <div class="message-info">
-                    <div class="name">Rasmus Lerdorf</div>
-                    <div class="time">20 april, 1969 at 13:37</div>
-                </div>
-                <div class="message">Bacon ipsum dolor amet ham prosciutto non, frankfurter qui in turducken eiusmod eu brisket ex pork loin excepteur chuck pig. Shankle cillum capicola tenderloin magna tail sirloin consequat pork belly meatloaf. Chislic swine nulla, tri-tip landjaeger venison flank deserunt labore kevin qui chuck.</div>
-            </article>
-            <article>
-                <div class="message-info">
-                    <div class="name">Rasmus Lerdorf</div>
-                    <div class="time">20 april, 1969 at 13:37</div>
-                </div>
-                <div class="message">Bacon ipsum dolor amet ham prosciutto non, frankfurter qui in turducken eiusmod eu brisket ex pork loin excepteur chuck pig. Shankle cillum capicola tenderloin magna tail sirloin consequat pork belly meatloaf. Chislic swine nulla, tri-tip landjaeger venison flank deserunt labore kevin qui chuck.</div>
-            </article>
-            <article>
-                <div class="message-info">
-                    <div class="name">Rasmus Lerdorf</div>
-                    <div class="time">20 april, 1969 at 13:37</div>
-                </div>
-                <div class="message">Bacon ipsum dolor amet ham prosciutto non, frankfurter qui in turducken eiusmod eu brisket ex pork loin excepteur chuck pig. Shankle cillum capicola tenderloin magna tail sirloin consequat pork belly meatloaf. Chislic swine nulla, tri-tip landjaeger venison flank deserunt labore kevin qui chuck.</div>
-            </article>
-            <article>
-                <div class="message-info">
-                    <div class="name">Rasmus Lerdorf</div>
-                    <div class="time">20 april, 1969 at 13:37</div>
-                </div>
-                <div class="message">Bacon ipsum dolor amet ham prosciutto non, frankfurter qui in turducken eiusmod eu brisket ex pork loin excepteur chuck pig. Shankle cillum capicola tenderloin magna tail sirloin consequat pork belly meatloaf. Chislic swine nulla, tri-tip landjaeger venison flank deserunt labore kevin qui chuck.</div>
-            </article>
-            <article>
-                <div class="message-info">
-                    <div class="name">Rasmus Lerdorf</div>
-                    <div class="time">20 april, 1969 at 13:37</div>
-                </div>
-                <div class="message">Bacon ipsum dolor amet ham prosciutto non, frankfurter qui in turducken eiusmod eu brisket ex pork loin excepteur chuck pig. Shankle cillum capicola tenderloin magna tail sirloin consequat pork belly meatloaf. Chislic swine nulla, tri-tip landjaeger venison flank deserunt labore kevin qui chuck.</div>
-            </article>
+            <?php
+            $messages = (array) json_decode(file_get_contents('guestbook.json'));
+            foreach ($messages as $message) {
+                $id = $message->id;
+                $name = $message->userName;
+                $timestamp = $message->timestamp;
+                $time = date("d/M/Y h:i:sa", $timestamp);
+                $msg = $message->message;
 
-
+                echo('
+                <article>
+                    <div class="message-info">
+                        <div class="name">'.$name.'</div>
+                        <div class="time">'.$time.'</div>
+                    </div>
+                    <div class="message">'.$msg.'</div>
+                </article>
+                ');
+            }
+            ?>
         </main>
     </div>
 </body>
