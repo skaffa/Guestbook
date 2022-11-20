@@ -27,6 +27,10 @@
                 </div>
                 <button class="btn btn-outline-primary" id="submit" onclick="validate('#ff2d00', 'Please make sure all fields are valid!')" type="submit">Submit</button>
             </form>
+            <?php
+            submitMessage();
+            Notification();
+            ?>
             <div id="notifications">
                 <!-- <img id="book" src="book.svg" alt=""> -->
             </div>
@@ -35,25 +39,8 @@
 
 
             <?php
-            $messages = (array) json_decode(file_get_contents('guestbook.json'));
-            foreach ($messages as $message) {
-                $id = $message->id;
-                $name = $message->userName;
-                $timestamp = $message->timestamp;
-                $time = date("d/M/Y h:i:sa", $timestamp);
-                $msg = $message->message;
-
-                echo('
-                <article>
-                    <div class="message-info">
-                        <div class="name">'.$name.'</div>
-                        <div class="time">'.$time.'</div>
-                    </div>
-                    <div class="message">'.$msg.'</div>
-                    <button class="delete-button" onclick="deleteMessage(\''.$id.'\')"><img src="bin.svg" width="12px" alt="">Delete</button>
-                </article>
-                ');
-            }
+            showGuestbook();
+            removeMessage();
             ?>
         </main>
     </div>
