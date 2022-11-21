@@ -29,7 +29,7 @@
             </form>
             <?php
             submitMessage();
-            Notification();
+            // notification();
             ?>
             <div id="notifications">
                 <!-- <img id="book" src="book.svg" alt=""> -->
@@ -39,8 +39,9 @@
 
 
             <?php
-            showGuestbook();
             removeMessage();
+            showGuestbook();
+
             ?>
         </main>
     </div>

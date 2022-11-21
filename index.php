@@ -55,8 +55,7 @@ function showGuestbook()
   }
 }
 
-function removeMessage()
-{
+function removeMessage() {
   if (isset($_GET["delid"])) {
     $id = $_GET["delid"];
     $data = (array) json_decode(file_get_contents("guestbook.json"));
@@ -74,8 +73,7 @@ function removeMessage()
   }
 }
 
-function Notification()
-{
+function notification() {
   if (isset($_SESSION["notification"])) {
     $color = $_SESSION["notification"]["color"];
     $message = $_SESSION["notification"]["message"];
@@ -86,3 +84,4 @@ function Notification()
 }
 
 require "index.view.php";
+notification();
