@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+date_default_timezone_set('Europe/Amsterdam');
+
 require "Message.php";
 require "GuestMessage.php";
 
@@ -78,8 +80,6 @@ function notification() {
     $color = $_SESSION["notification"]["color"];
     $message = $_SESSION["notification"]["message"];
     echo "<script>validate('$color', '$message');</script>";
-  } else {
-    echo "NAAH";
   }
 }
 
